@@ -1,0 +1,24 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)
+// swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name Networking
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import Foundation
+@_exported import Networking
+import Swift
+import _Concurrency
+import _StringProcessing
+public struct API {
+  public static func fetch<T>(endpoint: Networking.EndpointType, decodingType: T.Type, completion: @escaping (Swift.Result<T, Networking.APIError>) -> Swift.Void) where T : Swift.Decodable
+  public static func fetch<T>(url: Foundation.URL, decodingType: T.Type, completion: @escaping (Swift.Result<T, Networking.APIError>) -> Swift.Void) where T : Swift.Decodable
+  public static func post<T>(endpoint: Networking.EndpointType, returnType: T.Type, body: Swift.Encodable, headers: [Swift.String : Swift.String]? = nil, completion: @escaping (Swift.Result<T, Networking.APIError>) -> Swift.Void) where T : Swift.Decodable
+  public static func post<T>(url: Foundation.URL, returnType: T.Type, body: Swift.Encodable, headers: [Swift.String : Swift.String]? = nil, completion: @escaping (Swift.Result<T, Networking.APIError>) -> Swift.Void) where T : Swift.Decodable
+}
+public protocol EndpointType {
+  var url: Foundation.URL { get }
+}
+public enum APIError : Swift.Error {
+  case unknown(description: Swift.String)
+  case invalidResponse(response: Foundation.URLResponse?)
+  case requestFailed(errorCode: Swift.Int)
+  case failedDeserialization(type: Swift.String)
+}

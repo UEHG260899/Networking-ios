@@ -8,11 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		A4C1EE09293113EA0059E493 /* Networking.h in Headers */ = {isa = PBXBuildFile; fileRef = A4C1EE08293113EA0059E493 /* Networking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A4C1EE12293114BB0059E493 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C1EE11293114BB0059E493 /* APIError.swift */; };
+		A4C1EE152931182D0059E493 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C1EE142931182D0059E493 /* HTTPMethod.swift */; };
+		A4C1EE182931185C0059E493 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C1EE172931185C0059E493 /* API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A4C1EE05293113EA0059E493 /* Networking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Networking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4C1EE08293113EA0059E493 /* Networking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Networking.h; sourceTree = "<group>"; };
+		A4C1EE11293114BB0059E493 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		A4C1EE142931182D0059E493 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		A4C1EE172931185C0059E493 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +52,9 @@
 			isa = PBXGroup;
 			children = (
 				A4C1EE08293113EA0059E493 /* Networking.h */,
+				A4C1EE11293114BB0059E493 /* APIError.swift */,
+				A4C1EE142931182D0059E493 /* HTTPMethod.swift */,
+				A4C1EE172931185C0059E493 /* API.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -93,6 +102,7 @@
 				TargetAttributes = {
 					A4C1EE04293113EA0059E493 = {
 						CreatedOnToolsVersion = 14.0.1;
+						LastSwiftMigration = 1400;
 					};
 				};
 			};
@@ -129,6 +139,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4C1EE152931182D0059E493 /* HTTPMethod.swift in Sources */,
+				A4C1EE182931185C0059E493 /* API.swift in Sources */,
+				A4C1EE12293114BB0059E493 /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,6 +271,8 @@
 		A4C1EE0D293113EA0059E493 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -268,6 +283,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -278,6 +294,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -286,6 +303,8 @@
 		A4C1EE0E293113EA0059E493 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -296,6 +315,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
